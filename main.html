@@ -646,6 +646,74 @@
             line-height: 1.6;
         }
 
+        /* ===== Contact Form Styles ===== */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--lightest-slate);
+            margin-bottom: 8px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            background-color: var(--light-navy);
+            border: 1px solid var(--lightest-navy);
+            border-radius: 4px;
+            color: var(--lightest-slate);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--accent-tint);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            text-align: center;
+            display: none;
+        }
+
+        .form-status.success {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            display: block;
+        }
+
+        .form-status.error {
+            background-color: rgba(255, 100, 100, 0.1);
+            color: #ff6464;
+            border: 1px solid #ff6464;
+            display: block;
+        }
+
         /* ===== Footer ===== */
         footer {
             padding: 30px 0;
@@ -962,6 +1030,28 @@
                             <li>Streamlit</li>
                         </ul>
                     </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="folder-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Prakash2503/AI-Based-Law-Advisor-Chatbot-for-Legal-Case-Analysis" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">AI-Powered Legal Research Assistant</h3>
+                        <p class="project-description">The AI-Based Law Advisor Chatbot streamlines legal research using NLP and semantic search to analyze case details and identify relevant IPC sections and constitutional articles.
+                        </p>
+                        <ul class="project-tech">
+                            <li>Python</li>
+                            <li>PyMuPDF</li>
+                            <li>SentenceTransformers</li>
+                            <li>FAISS</li>
+                            <li>Gradio</li>
+                            <li>All-MiniLM-L6-v2 Model</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="more-projects">
                     <a href="#" class="more-btn">View More Projects</a>
@@ -1058,19 +1148,36 @@
         </section>
 
         <section id="contact" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2><span class="accent">06.</span> Get In Touch</h2>
-                    <div class="divider"></div>
+    <div class="container">
+        <div class="section-header">
+            <h2><span class="accent">06.</span> Get In Touch</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="contact-content">
+            <p class="contact-text">
+                I'm currently looking for internship opportunities in AI/ML and Data Science. If you have any questions or just want to say hi, feel free to reach out. I'll do my best to get back to you!
+            </p>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <div class="contact-content">
-                    <p class="contact-text">
-                        I'm currently looking for internship opportunities in AI/ML and Data Science. If you have any questions or just want to say hi, feel free to reach out. I'll do my best to get back to you!
-                    </p>
-                    <a href="mailto:prakashkrishnan526@gmail.com" class="cta-btn">Say Hello</a>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-            </div>
-        </section>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-btn">Send Message</button>
+            </form>
+            
+            <div id="form-status" class="form-status"></div>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer>
@@ -1152,3 +1259,4 @@
     </script>
 </body>
 </html>
+                        
